@@ -1,0 +1,28 @@
+.top {
+    background-color:snow;
+    background-position:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: none;
+    border-style: solid;
+    border-color: whitesmoke;
+ } 
+
+
+.banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 500px;
+}
+.bar {
+    background-color: black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.bar p {
+    color:whitesmoke;
+}

@@ -1,0 +1,33 @@
+
+$per_page=2;
+$start=0;
+$current_page=1;
+if(isset($_GET['start'])){
+	$start=$_GET['start'];
+	if($start<=0){
+		$start=0;
+		$current_page=1;
+	}else{
+		$current_page=$start;
+		$start--;
+		$start=$start*$per_page;
+	}
+}
+$record=mysqli_num_rows(mysqli_query($conn,"SELECT * FROM `images`"));
+$pagi=ceil($record/$per_page);
+
+
+
+<?php 
+	for($i=1;$i<=$pagi;$i++){
+	$class='';
+	if($current_page==$i){
+		?><li class="page-item "><a class="page-link" href="javascript:void(0)"><?php echo $i?></a></li><?php
+	}else{
+	?>
+		<li class="page-item"><a class="page-link" href="http://localhost/bonglib/floor/<?php echo $i?>"><?php echo $i?></a></li>
+	<?php
+	}
+	?>
+    
+	<?php } ?>
